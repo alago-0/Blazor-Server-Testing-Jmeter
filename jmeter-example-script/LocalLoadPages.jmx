@@ -214,7 +214,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BlazorPack Initialize" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BlazorPack Initialize"/>
         <hashTree>
           <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Refresh Variables" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
@@ -359,9 +359,9 @@ vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;)
             </eu.luminis.jmeter.wssampler.PingPongSampler>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Start Circuit"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Start Circuit" enabled="true"/>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
               <stringProp name="scriptLanguage">java</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -387,7 +387,7 @@ byte[] blazorBytes = BlazorHelper.blazorPack(messages);
 vars.put(&quot;startCircuit&quot;, Hex.encodeHexString(blazorBytes));</stringProp>
             </JSR223Sampler>
             <hashTree/>
-            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler">
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
               <boolProp name="TLS">false</boolProp>
               <stringProp name="server"></stringProp>
               <stringProp name="port">80</stringProp>
@@ -404,7 +404,7 @@ vars.put(&quot;startCircuit&quot;, Hex.encodeHexString(blazorBytes));</stringPro
               <intProp name="LoopController.loops">-1</intProp>
             </LoopController>
             <hashTree>
-              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler">
+              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
                 <boolProp name="TLS">false</boolProp>
                 <stringProp name="server"></stringProp>
                 <stringProp name="port">80</stringProp>
@@ -416,7 +416,7 @@ vars.put(&quot;startCircuit&quot;, Hex.encodeHexString(blazorBytes));</stringPro
                 <boolProp name="optional">false</boolProp>
               </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
               <hashTree>
-                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler">
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
                   <intProp name="OnError.action">6</intProp>
                 </ResultAction>
                 <hashTree/>
@@ -522,7 +522,7 @@ if (text.contains(&quot;RenderBatch&quot;))
                   <stringProp name="dataFile"></stringProp>
                 </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
                 <hashTree/>
-                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                   <stringProp name="scriptLanguage">groovy</stringProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
@@ -533,9 +533,9 @@ if (text.contains(&quot;RenderBatch&quot;))
               </hashTree>
             </hashTree>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main Page"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main Page" enabled="true"/>
           <hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Root Component"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Root Component" enabled="true"/>
             <hashTree>
               <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">java</stringProp>
@@ -562,7 +562,7 @@ vars.put(&quot;updateRoot&quot;, Hex.encodeHexString(blazorBytes));</stringProp>
               </JSR223Sampler>
               <hashTree/>
             </hashTree>
-            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler">
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
               <boolProp name="TLS">false</boolProp>
               <stringProp name="server"></stringProp>
               <stringProp name="port">80</stringProp>
@@ -709,11 +709,11 @@ if (text.contains(&quot;RenderBatch&quot;))
             </hashTree>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <stringProp name="LoopController.loops">30</stringProp>
         </LoopController>
         <hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Weather"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Weather" enabled="true"/>
           <hashTree>
             <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
               <boolProp name="TLS">false</boolProp>
@@ -861,9 +861,9 @@ if (text.contains(&quot;RenderBatch&quot;))
               </hashTree>
             </hashTree>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main" enabled="true"/>
           <hashTree>
-            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler">
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
               <boolProp name="TLS">false</boolProp>
               <stringProp name="server"></stringProp>
               <stringProp name="port">80</stringProp>
@@ -1009,9 +1009,9 @@ if (text.contains(&quot;RenderBatch&quot;))
               </hashTree>
             </hashTree>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Counter"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Counter" enabled="true"/>
           <hashTree>
-            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler">
+            <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
               <boolProp name="TLS">false</boolProp>
               <stringProp name="server"></stringProp>
               <stringProp name="port">80</stringProp>
@@ -1157,7 +1157,7 @@ if (text.contains(&quot;RenderBatch&quot;))
               </hashTree>
             </hashTree>
           </hashTree>
-          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
             <boolProp name="displayJMeterProperties">false</boolProp>
             <boolProp name="displayJMeterVariables">true</boolProp>
             <boolProp name="displaySystemProperties">false</boolProp>

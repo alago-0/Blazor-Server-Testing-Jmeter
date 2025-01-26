@@ -9,6 +9,7 @@ I will use blazor example app with global interactivity and prerender set to fal
 ### Prerequisites
 * Jmeter - https://jmeter.apache.org/
 * Jmeter WebSocket Samplers - https://bitbucket.org/pjtr/jmeter-websocket-samplers/downloads/ - place it in **jmeter/lib/ext** folder
+* Apache common lang - https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.17.0 - place it in **jmeter/lib** folder
 * Blazor Traffic Processor - https://github.com/PortSwigger/blazor-traffic-processor - Create jar using build instructions and place it in **jmeter/lib**
 * BlazorPack Jar (encodes blazor messages and is based on Blazor Traffic Processor) - **jars** folder - place it in **jmeter/lib** folder
 * **Optionally** Burp Suite with Blazor Traffic Processor (Makes creating requests easier)
@@ -212,19 +213,28 @@ Check if any render or invoke message
 If there are set next byteFrame to message, increse message type counter, and set flag variable to send message
 
 Script:
-```import com.blazorpack.Helpers.*;
+```
+import com.blazorpack.Helpers.*;
 import org.json.JSONArray;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.lang3.StringUtils;
 
 String text = prev.getResponseDataAsString();
-//log.info(text);
 
 if (text.contains("RenderBatch"))
 {	
 	log.info("Render Batch");
+	long jobNumber = StringUtils.countMatches(text, "RenderBatch");
+	log.info("Job number: " + Long.toString(jobNumber));
 	long number = Long.valueOf(vars.get("renderCompletedNumber"));
-	
-	String content = "[{\r\n"
+
+	String content = "";
+	for (long i = 0; i < jobNumber; i++)
+	{
+		log.info("Current Job: " + Long.toString(i + 1));
+		if (i != 0)
+			content += ",";
+		String job = "[{\r\n"
 					+ "   \"Target\": \"OnRenderCompleted\",\r\n"
 					+ "   \"Headers\": 0,\r\n"
 					+ "   \"Arguments\": [\r\n"
@@ -233,18 +243,29 @@ if (text.contains("RenderBatch"))
 					+ "   ],\r\n"
 					+ "   \"MessageType\": 1\r\n"
 					+ "}]";
+		content += job;
+		number++;
+	}
 					
 	JSONArray messages = new JSONArray(content);
 	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
 	vars.put("currentByteFrame", Hex.encodeHexString(blazorBytes));
-	vars.put("renderCompletedNumber", Long.toString(++number));
+	vars.put("renderCompletedNumber", Long.toString(number));
 	vars.put("formedNewByteFrame", "1");
 
 } else if (text.contains("BeginInvoke")) {
 	log.info("Begin Invoke");
+	long jobNumber = StringUtils.countMatches(text, "BeginInvoke");
+	log.info("Job number: " + Long.toString(jobNumber));
 	long number = Long.valueOf(vars.get("endInvokeNumber"));
-	
-	String content = "[{\r\n"
+
+	String content = "";
+	for (long i = 0; i < jobNumber; i++)
+	{
+		log.info("Current Job: " + Long.toString(i + 1));
+		if (i != 0)
+			content += ",";
+		String job = "[{\r\n"
 					+ "   \"Target\": \"EndInvokeJSFromDotNet\",\r\n"
 					+ "   \"Headers\": 0,\r\n"
 					+ "   \"Arguments\": [\r\n"
@@ -258,11 +279,14 @@ if (text.contains("RenderBatch"))
 					+ "   ],\r\n"
 					+ "   \"MessageType\": 1\r\n"
 					+ "}]";
+		content += job;
+		number++;
+	}
 					
 	JSONArray messages = new JSONArray(content);
 	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
 	vars.put("currentByteFrame", Hex.encodeHexString(blazorBytes));
-	vars.put("endInvokeNumber", Long.toString(++number));
+	vars.put("endInvokeNumber", Long.toString(number));
 	vars.put("formedNewByteFrame", "1");
 }
 ```
@@ -367,11 +391,7 @@ Jmeter data
 
 ![alt text](img/jmeter-load-weather-result.jpg)
 
-### Problems
-
-- After loading a few pages inside websocket in a loop the server stops sending required data (around 5 times of loading same pages), so I would loop websocket initialization as well, which is basically refreshing our page (You also have to reset render and invoke variables). This is not ideal in testing websocket, but it does also test how blazor responds to disconnecting and connecting websockets with multiple users
-
-### Conclusion and thoughts
+### Conclusion and Thoughts
 
 - Using this I was able to test one of our servers with 5,000 concurrent users
 - I hope this guide helps people with figuring out how to stress test blazor ssr and any input on how to improve this is appreciated
