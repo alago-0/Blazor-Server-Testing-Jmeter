@@ -4,13 +4,14 @@
 
 Recently, I was tasked with stress testing our Blazor SSR app. I noticed that there are no existing tools for this task, and most of the time, people would recommend creating multiple Selenium or Playwright instances. However, I didn’t like this approach, as opening 20 Selenium instances would fill up all of my 32 GB of RAM. So, I decided to try and make it work with the JMeter WebSocket plugin, since JMeter allows me to create at least 5,000 threads without consuming all of my RAM. For now, everything here is pretty raw in terms of usage, but it gets the job done.
 
-I will use blazor example app with global interactivity and prerender set to false
+I will use blazor example app with global interactivity and prerender set to false. I'm including the script that I'm using here, so you can try to follow and set it up yourself
 
 ### Prerequisites
 * Jmeter - https://jmeter.apache.org/
 * Jmeter WebSocket Samplers - https://bitbucket.org/pjtr/jmeter-websocket-samplers/downloads/ - place it in **jmeter/lib/ext** folder
-* BlazorPack Jar (encodes blazor messages and is based on blazor-traffic-processor - "https://github.com/PortSwigger/blazor-traffic-processor") - **jars** folder - place it in **jmeter/lib** folder
-* **Optionally** Burp Suite with blazor traffic processor (Makes creating requests easier) - https://portswigger.net/burp/communitydownload, https://github.com/PortSwigger/blazor-traffic-processor
+* Blazor Traffic Processor - https://github.com/PortSwigger/blazor-traffic-processor - Create jar using build instructions and place it in **jmeter/lib**
+* BlazorPack Jar (encodes blazor messages and is based on Blazor Traffic Processor) - **jars** folder - place it in **jmeter/lib** folder
+* **Optionally** Burp Suite with Blazor Traffic Processor (Makes creating requests easier)
 
 ### Jmeter thread configuration
 Add HTTP Cookie Manager, HTTP Header Manager, HTTP Authorization Manager, HTTP Cache manager, User Defined Variables, and WebSocket Ping/Pong Frame Filter.
@@ -208,7 +209,7 @@ Check if any render or invoke message
 
 ![alt text](img/jmeter-response-loop-check-message.jpg)
 
-If there are set next byteFrame to message, incresase message type counter, and set flag variable to send message
+If there are set next byteFrame to message, increse message type counter, and set flag variable to send message
 
 Script:
 ```import com.blazorpack.Helpers.*;
@@ -338,8 +339,10 @@ We will get "AttachComponent" as well as multiple invoke and render jobs to whic
 
 ![alt text](img/jmeter-update-root-results.jpg)
 
-#### Loading page analysis
+### Loading page
 Now we can try to load blazor example weather page to see if debugger catches the loading. I will set breakpoint to OnInitializedAsync on weather page and see if jmeter actually makes the server load it
+
+#### Loading page analysis
 
 When loading a page browser makes this request
 ```

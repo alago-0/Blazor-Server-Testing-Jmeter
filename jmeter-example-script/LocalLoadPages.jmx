@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="LocalTest">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="signalrInit" elementType="Argument">
+              <stringProp name="Argument.name">signalrInit</stringProp>
+              <stringProp name="Argument.value">{&quot;protocol&quot;:&quot;blazorpack&quot;,&quot;version&quot;:1}&#x1e;</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="startCircuit" elementType="Argument">
+              <stringProp name="Argument.name">startCircuit</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="endInvokeNumber" elementType="Argument">
+              <stringProp name="Argument.name">endInvokeNumber</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="updateRoot" elementType="Argument">
+              <stringProp name="Argument.name">updateRoot</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="renderCompletedNumber" elementType="Argument">
+              <stringProp name="Argument.name">renderCompletedNumber</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="beginInvokeNumber" elementType="Argument">
+              <stringProp name="Argument.name">beginInvokeNumber</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="beginInvoke" elementType="Argument">
+              <stringProp name="Argument.name">beginInvoke</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="currentByteFrame" elementType="Argument">
+              <stringProp name="Argument.name">currentByteFrame</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="formedNewByteFrame" elementType="Argument">
+              <stringProp name="Argument.name">formedNewByteFrame</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="loadPage" elementType="Argument">
+              <stringProp name="Argument.name">loadPage</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+          <collectionProp name="AuthManager.auth_list"/>
+          <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+        </AuthManager>
+        <hashTree/>
+        <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+          <collectionProp name="DNSCacheManager.servers"/>
+          <collectionProp name="DNSCacheManager.hosts"/>
+          <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+          <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+        </DNSCacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers"/>
+        </HeaderManager>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">false</boolProp>
+          <boolProp name="useExpires">true</boolProp>
+          <boolProp name="CacheManager.controlledByThread">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <eu.luminis.jmeter.wssampler.PingFrameFilter guiclass="eu.luminis.jmeter.wssampler.PingFrameFilterGui" testclass="eu.luminis.jmeter.wssampler.PingFrameFilter" testname="WebSocket Ping/Pong Frame Filter" enabled="true">
+          <boolProp name="replyToPing">true</boolProp>
+          <stringProp name="filterType">FilterAll</stringProp>
+        </eu.luminis.jmeter.wssampler.PingFrameFilter>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BlazorPack Auth" enabled="false"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request Get Base Page" enabled="true">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">5505</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request Get Auth Page" enabled="true">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">5505</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">Account/Login</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="ReturnUrl" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">%2F</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">ReturnUrl</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="CSS Selector Extractor" enabled="true">
+              <stringProp name="HtmlExtractor.refname">token</stringProp>
+              <stringProp name="HtmlExtractor.expr">input[name=__RequestVerificationToken]</stringProp>
+              <stringProp name="HtmlExtractor.attribute">value</stringProp>
+              <stringProp name="HtmlExtractor.default"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+            </HtmlExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request POST Auth Page" enabled="true">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">5505</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">Account/Login</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Input.Email" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">admin@admin</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">Input.Email</stringProp>
+                </elementProp>
+                <elementProp name="Input.RememberMe" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">False</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">Input.RememberMe</stringProp>
+                </elementProp>
+                <elementProp name="_handler" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">login</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">_handler</stringProp>
+                </elementProp>
+                <elementProp name="ReturnUrl" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">%2F</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">ReturnUrl</stringProp>
+                </elementProp>
+                <elementProp name="__RequestVerificationToken" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">${token}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">__RequestVerificationToken</stringProp>
+                </elementProp>
+                <elementProp name="Input.Password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">admin@admin</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">Input.Password</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Refresh Variables" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">vars.put(&quot;endInvokeNumber&quot;, &quot;2&quot;)
+vars.put(&quot;renderCompletedNumber&quot;, &quot;2&quot;)
+vars.put(&quot;beginInvokeNumber&quot;, &quot;1&quot;)
+vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;)
+</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BlazorPack Initialize" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request GET Main Page" enabled="true">
+              <stringProp name="HTTPSampler.domain">localhost</stringProp>
+              <stringProp name="HTTPSampler.port">7090</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">componentState</stringProp>
+                <stringProp name="RegexExtractor.regex">Blazor-Server-Component-State:(.+)--&gt;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">locationHash</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;locationHash&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+                <stringProp name="RegexExtractor.match_number">-1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">descriptor</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;descriptor&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+                <stringProp name="RegexExtractor.match_number">-1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">prerenderId</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;prerenderId&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+                <stringProp name="RegexExtractor.match_number">-1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request Blazor Initialize" enabled="true">
+              <stringProp name="HTTPSampler.domain">localhost</stringProp>
+              <stringProp name="HTTPSampler.port">7090</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">_blazor/initializers</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request Blazor Negotiate" enabled="true">
+              <stringProp name="HTTPSampler.domain">localhost</stringProp>
+              <stringProp name="HTTPSampler.port">7090</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">_blazor/negotiate?negotiateVersion=1</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Connection Id" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">connectionToken</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.connectionToken</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <eu.luminis.jmeter.wssampler.OpenWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.OpenWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.OpenWebSocketSampler" testname="WebSocket Open Connection" enabled="true">
+              <boolProp name="TLS">true</boolProp>
+              <stringProp name="server">localhost</stringProp>
+              <stringProp name="port">7090</stringProp>
+              <stringProp name="path">_blazor?id=${connectionToken}</stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+            </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
+            <hashTree/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BlazorPack WebSocket Initialize" enabled="true"/>
+            <hashTree>
+              <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="payloadType">Text</stringProp>
+                <stringProp name="requestData">{&quot;protocol&quot;:&quot;blazorpack&quot;,&quot;version&quot;:1}&#x1e;</stringProp>
+                <boolProp name="createNewConnection">false</boolProp>
+                <boolProp name="loadDataFromFile">false</boolProp>
+                <stringProp name="dataFile"></stringProp>
+              </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+              <hashTree/>
+              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="dataType">Binary</stringProp>
+                <boolProp name="createNewConnection">false</boolProp>
+                <stringProp name="readTimeout">6000</stringProp>
+                <boolProp name="optional">false</boolProp>
+              </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+              <hashTree/>
+              <eu.luminis.jmeter.wssampler.PingPongSampler guiclass="eu.luminis.jmeter.wssampler.PingPongSamplerGui" testclass="eu.luminis.jmeter.wssampler.PingPongSampler" testname="WebSocket First Pong To Server" enabled="true">
+                <stringProp name="type">Pong</stringProp>
+                <stringProp name="readTimeout">6000</stringProp>
+              </eu.luminis.jmeter.wssampler.PingPongSampler>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Start Circuit" enabled="true"/>
+            <hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                <stringProp name="scriptLanguage">java</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String content = &quot;[{\r\n&quot;
+				+ &quot;   \&quot;Target\&quot;: \&quot;StartCircuit\&quot;,\r\n&quot;
+				+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+				+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+				+ &quot;      \&quot;https://localhost:7090/\&quot;,\r\n&quot;
+				+ &quot;      \&quot;https://localhost:7090/\&quot;,\r\n&quot;
+				+ &quot;      [],\r\n&quot;
+				+ &quot;      \&quot;&quot; + vars.get(&quot;componentState&quot;) + &quot;\&quot;\r\n&quot;
+				+ &quot;   ],\r\n&quot;
+				+ &quot;   \&quot;InvocationId\&quot;: \&quot;0\&quot;,\r\n&quot;
+				+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+				+ &quot;}]&quot;;
+JSONArray messages = new JSONArray(content);
+byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+vars.put(&quot;startCircuit&quot;, Hex.encodeHexString(blazorBytes));</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
+              <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="WebSocket request-response Sampler" enabled="true">
+                <boolProp name="createNewConnection">false</boolProp>
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="payloadType">Binary</stringProp>
+                <stringProp name="requestData">${startCircuit}</stringProp>
+                <stringProp name="readTimeout">6000</stringProp>
+                <boolProp name="loadDataFromFile">false</boolProp>
+                <stringProp name="dataFile"></stringProp>
+              </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+              <hashTree/>
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Response To Server LOOP" enabled="true">
+                <intProp name="LoopController.loops">-1</intProp>
+              </LoopController>
+              <hashTree>
+                <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                  <boolProp name="TLS">false</boolProp>
+                  <stringProp name="server"></stringProp>
+                  <stringProp name="port">80</stringProp>
+                  <stringProp name="path"></stringProp>
+                  <stringProp name="connectTimeout">20000</stringProp>
+                  <stringProp name="dataType">Binary</stringProp>
+                  <boolProp name="createNewConnection">false</boolProp>
+                  <stringProp name="readTimeout">600</stringProp>
+                  <boolProp name="optional">false</boolProp>
+                </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+                <hashTree>
+                  <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                    <intProp name="OnError.action">6</intProp>
+                  </ResultAction>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String text = prev.getResponseDataAsString();
+//log.info(text);
+
+if (text.contains(&quot;RenderBatch&quot;))
+{	
+	log.info(&quot;Render Batch&quot;);
+	long number = Long.valueOf(vars.get(&quot;renderCompletedNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;OnRenderCompleted\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      \&quot;null\&quot;\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;renderCompletedNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+
+} else if (text.contains(&quot;BeginInvoke&quot;)) {
+	log.info(&quot;Begin Invoke&quot;);
+	long number = Long.valueOf(vars.get(&quot;endInvokeNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;EndInvokeJSFromDotNet\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      true,\r\n&quot;
+					+ &quot;      [\r\n&quot;
+					+ &quot;         &quot; + number + &quot;,\r\n&quot;
+					+ &quot;         true,\r\n&quot;
+					+ &quot;         null\r\n&quot;
+					+ &quot;      ]\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;endInvokeNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+}</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                  <stringProp name="IfController.condition">${__jexl3(&quot;${formedNewByteFrame}&quot;== &quot;1&quot;,)}</stringProp>
+                  <boolProp name="IfController.evaluateAll">false</boolProp>
+                  <boolProp name="IfController.useExpression">true</boolProp>
+                </IfController>
+                <hashTree>
+                  <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                    <boolProp name="TLS">false</boolProp>
+                    <stringProp name="server"></stringProp>
+                    <stringProp name="port">80</stringProp>
+                    <stringProp name="path"></stringProp>
+                    <stringProp name="connectTimeout">20000</stringProp>
+                    <stringProp name="payloadType">Binary</stringProp>
+                    <stringProp name="requestData">${currentByteFrame}</stringProp>
+                    <boolProp name="createNewConnection">false</boolProp>
+                    <boolProp name="loadDataFromFile">false</boolProp>
+                    <stringProp name="dataFile"></stringProp>
+                  </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+                  <hashTree/>
+                  <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">vars.put(&quot;formedNewByteFrame&quot;, &quot;0&quot;)</stringProp>
+                  </JSR223Sampler>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main Page" enabled="true"/>
+            <hashTree>
+              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Root Component" enabled="true"/>
+              <hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String content = &quot;[{\r\n&quot;
+				+ &quot;   \&quot;Target\&quot;: \&quot;UpdateRootComponents\&quot;,\r\n&quot;
+				+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+				+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+				+ &quot;      \&quot;{\\\&quot;batchId\\\&quot;:1,\\\&quot;operations\\\&quot;:[{\\\&quot;type\\\&quot;:\\\&quot;add\\\&quot;,\\\&quot;ssrComponentId\\\&quot;:1,\\\&quot;marker\\\&quot;:{\\\&quot;type\\\&quot;:\\\&quot;server\\\&quot;,\\\&quot;prerenderId\\\&quot;:\\\&quot;&quot; + vars.get(&quot;prerenderId_1&quot;) + &quot;\\\&quot;,\\\&quot;key\\\&quot;:{\\\&quot;locationHash\\\&quot;:\\\&quot;&quot; + vars.get(&quot;locationHash_1&quot;) + &quot;\\\&quot;,\\\&quot;formattedComponentKey\\\&quot;:\\\&quot;\\\&quot;},\\\&quot;sequence\\\&quot;:0,\\\&quot;descriptor\\\&quot;:\\\&quot;&quot; + vars.get(&quot;descriptor_1&quot;) + &quot;\\\&quot;,\\\&quot;uniqueId\\\&quot;:0}},{\\\&quot;type\\\&quot;:\\\&quot;add\\\&quot;,\\\&quot;ssrComponentId\\\&quot;:2,\\\&quot;marker\\\&quot;:{\\\&quot;type\\\&quot;:\\\&quot;server\\\&quot;,\\\&quot;key\\\&quot;:{\\\&quot;locationHash\\\&quot;:\\\&quot;&quot; + vars.get(&quot;locationHash_2&quot;) + &quot;\\\&quot;,\\\&quot;formattedComponentKey\\\&quot;:\\\&quot;\\\&quot;},\\\&quot;sequence\\\&quot;:1,\\\&quot;descriptor\\\&quot;:\\\&quot;&quot; + vars.get(&quot;descriptor_2&quot;) + &quot;\\\&quot;,\\\&quot;uniqueId\\\&quot;:1}}]}\&quot;,\r\n&quot;
+				+ &quot;      \&quot;&quot; + vars.get(&quot;componentState&quot;) + &quot;\&quot;\r\n&quot;
+				+ &quot;   ],\r\n&quot;
+				+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+				+ &quot;}]&quot;;
+//log.info(content);
+JSONArray messages = new JSONArray(content);
+byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+vars.put(&quot;updateRoot&quot;, Hex.encodeHexString(blazorBytes));</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+              </hashTree>
+              <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="Update Root Component" enabled="true">
+                <boolProp name="createNewConnection">false</boolProp>
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="payloadType">Binary</stringProp>
+                <stringProp name="requestData">${updateRoot}</stringProp>
+                <stringProp name="readTimeout">6000</stringProp>
+                <boolProp name="loadDataFromFile">false</boolProp>
+                <stringProp name="dataFile"></stringProp>
+              </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+              <hashTree/>
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Response To Server LOOP" enabled="true">
+                <intProp name="LoopController.loops">-1</intProp>
+              </LoopController>
+              <hashTree>
+                <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                  <boolProp name="TLS">false</boolProp>
+                  <stringProp name="server"></stringProp>
+                  <stringProp name="port">80</stringProp>
+                  <stringProp name="path"></stringProp>
+                  <stringProp name="connectTimeout">20000</stringProp>
+                  <stringProp name="dataType">Binary</stringProp>
+                  <boolProp name="createNewConnection">false</boolProp>
+                  <stringProp name="readTimeout">600</stringProp>
+                  <boolProp name="optional">false</boolProp>
+                </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+                <hashTree>
+                  <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                    <intProp name="OnError.action">6</intProp>
+                  </ResultAction>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String text = prev.getResponseDataAsString();
+//log.info(text);
+
+if (text.contains(&quot;RenderBatch&quot;))
+{	
+	log.info(&quot;Render Batch&quot;);
+	long number = Long.valueOf(vars.get(&quot;renderCompletedNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;OnRenderCompleted\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      \&quot;null\&quot;\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;renderCompletedNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+
+} else if (text.contains(&quot;BeginInvoke&quot;)) {
+	log.info(&quot;Begin Invoke&quot;);
+	long number = Long.valueOf(vars.get(&quot;endInvokeNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;EndInvokeJSFromDotNet\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      true,\r\n&quot;
+					+ &quot;      [\r\n&quot;
+					+ &quot;         &quot; + number + &quot;,\r\n&quot;
+					+ &quot;         true,\r\n&quot;
+					+ &quot;         null\r\n&quot;
+					+ &quot;      ]\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;endInvokeNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+}</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                  <stringProp name="IfController.condition">${__jexl3(&quot;${formedNewByteFrame}&quot;== &quot;1&quot;,)}</stringProp>
+                  <boolProp name="IfController.evaluateAll">false</boolProp>
+                  <boolProp name="IfController.useExpression">true</boolProp>
+                </IfController>
+                <hashTree>
+                  <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                    <boolProp name="TLS">false</boolProp>
+                    <stringProp name="server"></stringProp>
+                    <stringProp name="port">80</stringProp>
+                    <stringProp name="path"></stringProp>
+                    <stringProp name="connectTimeout">20000</stringProp>
+                    <stringProp name="payloadType">Binary</stringProp>
+                    <stringProp name="requestData">${currentByteFrame}</stringProp>
+                    <boolProp name="createNewConnection">false</boolProp>
+                    <boolProp name="loadDataFromFile">false</boolProp>
+                    <stringProp name="dataFile"></stringProp>
+                  </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+                  <hashTree/>
+                  <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">vars.put(&quot;formedNewByteFrame&quot;, &quot;0&quot;)</stringProp>
+                  </JSR223Sampler>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Main" enabled="false"/>
+          <hashTree>
+            <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="Load Page" enabled="true">
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Binary</stringProp>
+              <stringProp name="requestData">31950180c0b14f6e4c6f636174696f6e4368616e67656493b768747470733a2f2f6c6f63616c686f73743a373039302fc0c3</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+            <hashTree/>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Response To Server LOOP" enabled="true">
+              <intProp name="LoopController.loops">-1</intProp>
+            </LoopController>
+            <hashTree>
+              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="dataType">Binary</stringProp>
+                <boolProp name="createNewConnection">false</boolProp>
+                <stringProp name="readTimeout">600</stringProp>
+                <boolProp name="optional">false</boolProp>
+              </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+              <hashTree>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">6</intProp>
+                </ResultAction>
+                <hashTree/>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String text = prev.getResponseDataAsString();
+//log.info(text);
+
+if (text.contains(&quot;RenderBatch&quot;))
+{	
+	log.info(&quot;Render Batch&quot;);
+	long number = Long.valueOf(vars.get(&quot;renderCompletedNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;OnRenderCompleted\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      \&quot;null\&quot;\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;renderCompletedNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+
+} else if (text.contains(&quot;BeginInvoke&quot;)) {
+	log.info(&quot;Begin Invoke&quot;);
+	long number = Long.valueOf(vars.get(&quot;endInvokeNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;EndInvokeJSFromDotNet\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      true,\r\n&quot;
+					+ &quot;      [\r\n&quot;
+					+ &quot;         &quot; + number + &quot;,\r\n&quot;
+					+ &quot;         true,\r\n&quot;
+					+ &quot;         null\r\n&quot;
+					+ &quot;      ]\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;endInvokeNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+}</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">${__jexl3(&quot;${formedNewByteFrame}&quot;== &quot;1&quot;,)}</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+              </IfController>
+              <hashTree>
+                <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                  <boolProp name="TLS">false</boolProp>
+                  <stringProp name="server"></stringProp>
+                  <stringProp name="port">80</stringProp>
+                  <stringProp name="path"></stringProp>
+                  <stringProp name="connectTimeout">20000</stringProp>
+                  <stringProp name="payloadType">Binary</stringProp>
+                  <stringProp name="requestData">${currentByteFrame}</stringProp>
+                  <boolProp name="createNewConnection">false</boolProp>
+                  <boolProp name="loadDataFromFile">false</boolProp>
+                  <stringProp name="dataFile"></stringProp>
+                </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">vars.put(&quot;formedNewByteFrame&quot;, &quot;0&quot;)</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Counter" enabled="false"/>
+          <hashTree>
+            <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="Load Page" enabled="true">
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Binary</stringProp>
+              <stringProp name="requestData">38950180c0b14f6e4c6f636174696f6e4368616e67656493be68747470733a2f2f6c6f63616c686f73743a373039302f636f756e746572c0c3</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+            <hashTree/>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Response To Server LOOP" enabled="true">
+              <intProp name="LoopController.loops">-1</intProp>
+            </LoopController>
+            <hashTree>
+              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="dataType">Binary</stringProp>
+                <boolProp name="createNewConnection">false</boolProp>
+                <stringProp name="readTimeout">600</stringProp>
+                <boolProp name="optional">false</boolProp>
+              </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+              <hashTree>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">6</intProp>
+                </ResultAction>
+                <hashTree/>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String text = prev.getResponseDataAsString();
+//log.info(text);
+
+if (text.contains(&quot;RenderBatch&quot;))
+{	
+	log.info(&quot;Render Batch&quot;);
+	long number = Long.valueOf(vars.get(&quot;renderCompletedNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;OnRenderCompleted\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      \&quot;null\&quot;\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;renderCompletedNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+
+} else if (text.contains(&quot;BeginInvoke&quot;)) {
+	log.info(&quot;Begin Invoke&quot;);
+	long number = Long.valueOf(vars.get(&quot;endInvokeNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;EndInvokeJSFromDotNet\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      true,\r\n&quot;
+					+ &quot;      [\r\n&quot;
+					+ &quot;         &quot; + number + &quot;,\r\n&quot;
+					+ &quot;         true,\r\n&quot;
+					+ &quot;         null\r\n&quot;
+					+ &quot;      ]\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;endInvokeNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+}</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">${__jexl3(&quot;${formedNewByteFrame}&quot;== &quot;1&quot;,)}</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+              </IfController>
+              <hashTree>
+                <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                  <boolProp name="TLS">false</boolProp>
+                  <stringProp name="server"></stringProp>
+                  <stringProp name="port">80</stringProp>
+                  <stringProp name="path"></stringProp>
+                  <stringProp name="connectTimeout">20000</stringProp>
+                  <stringProp name="payloadType">Binary</stringProp>
+                  <stringProp name="requestData">${currentByteFrame}</stringProp>
+                  <boolProp name="createNewConnection">false</boolProp>
+                  <boolProp name="loadDataFromFile">false</boolProp>
+                  <stringProp name="dataFile"></stringProp>
+                </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">vars.put(&quot;formedNewByteFrame&quot;, &quot;0&quot;)</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Load Weather" enabled="true"/>
+          <hashTree>
+            <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="Load Page" enabled="true">
+              <boolProp name="createNewConnection">false</boolProp>
+              <boolProp name="TLS">false</boolProp>
+              <stringProp name="server"></stringProp>
+              <stringProp name="port">80</stringProp>
+              <stringProp name="path"></stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <stringProp name="payloadType">Binary</stringProp>
+              <stringProp name="requestData">38950180c0b14f6e4c6f636174696f6e4368616e67656493be68747470733a2f2f6c6f63616c686f73743a373039302f77656174686572c0c3</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+            <hashTree/>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Response To Server LOOP" enabled="true">
+              <intProp name="LoopController.loops">-1</intProp>
+            </LoopController>
+            <hashTree>
+              <eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler" testname="WebSocket Single Read Sampler" enabled="true">
+                <boolProp name="TLS">false</boolProp>
+                <stringProp name="server"></stringProp>
+                <stringProp name="port">80</stringProp>
+                <stringProp name="path"></stringProp>
+                <stringProp name="connectTimeout">20000</stringProp>
+                <stringProp name="dataType">Binary</stringProp>
+                <boolProp name="createNewConnection">false</boolProp>
+                <stringProp name="readTimeout">600</stringProp>
+                <boolProp name="optional">false</boolProp>
+              </eu.luminis.jmeter.wssampler.SingleReadWebSocketSampler>
+              <hashTree>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">6</intProp>
+                </ResultAction>
+                <hashTree/>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import com.blazorpack.Helpers.*;
+import org.json.JSONArray;
+import org.apache.commons.codec.binary.Hex;
+
+String text = prev.getResponseDataAsString();
+//log.info(text);
+
+if (text.contains(&quot;RenderBatch&quot;))
+{	
+	log.info(&quot;Render Batch&quot;);
+	long number = Long.valueOf(vars.get(&quot;renderCompletedNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;OnRenderCompleted\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      \&quot;null\&quot;\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;renderCompletedNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+
+} else if (text.contains(&quot;BeginInvoke&quot;)) {
+	log.info(&quot;Begin Invoke&quot;);
+	long number = Long.valueOf(vars.get(&quot;endInvokeNumber&quot;));
+	
+	String content = &quot;[{\r\n&quot;
+					+ &quot;   \&quot;Target\&quot;: \&quot;EndInvokeJSFromDotNet\&quot;,\r\n&quot;
+					+ &quot;   \&quot;Headers\&quot;: 0,\r\n&quot;
+					+ &quot;   \&quot;Arguments\&quot;: [\r\n&quot;
+					+ &quot;      &quot; + number + &quot;,\r\n&quot;
+					+ &quot;      true,\r\n&quot;
+					+ &quot;      [\r\n&quot;
+					+ &quot;         &quot; + number + &quot;,\r\n&quot;
+					+ &quot;         true,\r\n&quot;
+					+ &quot;         null\r\n&quot;
+					+ &quot;      ]\r\n&quot;
+					+ &quot;   ],\r\n&quot;
+					+ &quot;   \&quot;MessageType\&quot;: 1\r\n&quot;
+					+ &quot;}]&quot;;
+					
+	JSONArray messages = new JSONArray(content);
+	byte[] blazorBytes = BlazorHelper.blazorPack(messages);
+	vars.put(&quot;currentByteFrame&quot;, Hex.encodeHexString(blazorBytes));
+	vars.put(&quot;endInvokeNumber&quot;, Long.toString(++number));
+	vars.put(&quot;formedNewByteFrame&quot;, &quot;1&quot;);
+}</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+                <stringProp name="IfController.condition">${__jexl3(&quot;${formedNewByteFrame}&quot;== &quot;1&quot;,)}</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+              </IfController>
+              <hashTree>
+                <eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler" testname="WebSocket Single Write Sampler" enabled="true">
+                  <boolProp name="TLS">false</boolProp>
+                  <stringProp name="server"></stringProp>
+                  <stringProp name="port">80</stringProp>
+                  <stringProp name="path"></stringProp>
+                  <stringProp name="connectTimeout">20000</stringProp>
+                  <stringProp name="payloadType">Binary</stringProp>
+                  <stringProp name="requestData">${currentByteFrame}</stringProp>
+                  <boolProp name="createNewConnection">false</boolProp>
+                  <boolProp name="loadDataFromFile">false</boolProp>
+                  <stringProp name="dataFile"></stringProp>
+                </eu.luminis.jmeter.wssampler.SingleWriteWebSocketSampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">vars.put(&quot;formedNewByteFrame&quot;, &quot;0&quot;)</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
