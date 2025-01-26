@@ -369,7 +369,7 @@ Jmeter data
 
 ### Problems
 
-- After loading a few pages inside websocket in a loop the server stops sending required data (around 5 times of loading same pages), so I would loop websocket initializtion as well, which is basically refreshing our page (You also have to reset render and invoke variables). This is not ideal in testing websocket, but it does also test how blazor responds to disconnecting and connecting websockets with multiple users
+- After loading a few pages inside websocket in a loop the server stops sending required data (around 5 times of loading same pages), so I would loop websocket initialization as well, which is basically refreshing our page (You also have to reset render and invoke variables). This is not ideal in testing websocket, but it does also test how blazor responds to disconnecting and connecting websockets with multiple users
 
 ### Conclusion and thoughts
 
